@@ -296,6 +296,35 @@
       border-color: var(--accent);
     }
 
+    /* ===== ADDITIONAL INFO - FIXED WIDTH ===== */
+    .additional-section {
+      margin-top: 25px;
+    }
+
+    .additional-item {
+      background: var(--light);
+      padding: 18px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .additional-label {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .additional-value {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       header { padding: 30px 20px 20px; }
@@ -338,7 +367,7 @@
         <img src="image.png" alt="Bohdan Nashchotskyi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="photo-placeholder" style="display: none;">BN</div>
       </div>
-      <h1>Богдан Нащоцький</h1>
+      <h1>Богдан Нащотський</h1>
       <div class="contact-info">
         <span>📍 Зутермер, Нідерланди</span>
         <span>📞 +380 93 651 7435 (WhatsApp)</span>
@@ -352,7 +381,7 @@
         
         <div class="profile-item">
           <span class="profile-label">ПІБ</span>
-          <span class="profile-value"><strong>Нащоцький Богдан</strong></span>
+          <span class="profile-value"><strong>Нащотський Богдан</strong></span>
         </div>
 
         <div class="profile-item">
@@ -379,16 +408,17 @@
       <div class="about-box">
         <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.2rem;">👤 Про мене</h3>
         <p>
-          Шукаю роботу в закладі, де високо цінують рівень сервісу та професійний підхід до справи. 
-          Маю досвід взаємодії в міжнародному середовищі та легко адаптуюся до роботи в багатонаціональній команді.
+          Шукаю можливість працювати в закладі, де цінують якісне обслуговування та професіоналізм. 
+          Маю досвід роботи в міжнародному середовищі та комфортно почуваюся в багатонаціональній команді.
         </p>
         <p>
-          Розглядаю сезонну зайнятість на Кіпр, відкритий до переїзду й офіційного працевлаштування. 
-          Прагну здобути практичний міжнародний досвід у сфері гостинності та обслуговування клієнтів.
+          Готовий до сезонної роботи на Кіпрі, відкритий до переїзду та офіційного працевлаштування. 
+          Прагну отримати міжнародний досвід у сфері гостинності та обслуговування.
         </p>
         <p>
-          Відзначаюся відповідальністю, швидко опановую нові обов’язки та стабільно дотримуюся високих стандартів сервісу. 
-          У вільний час граю в шахи, займаюся плаванням і баскетболом, а також граю на гітарі.
+          Відповідально ставлюся до своїх обов'язків, швидко навчаюся новому та завжди дотримуюсь 
+          високих стандартів сервісу. У вільний час граю в шахи, займаюся плаванням та баскетболом, 
+          а також граю на гітарі.
         </p>
       </div>
 
@@ -491,19 +521,21 @@
         </p>
       </div>
 
-      <!-- ADDITIONAL -->
+      <!-- ADDITIONAL INFO -->
       <h2 style="margin-top: 30px;">📌 Додатково</h2>
-      <div class="profile-item" style="margin-top: 15px;">
-        <span class="profile-label">Хобі</span>
-        <span class="profile-value">Гра на гітарі, шахи, плавання, баскетбол, музика</span>
-      </div>
-      <div class="profile-item" style="margin-top: 15px;">
-        <span class="profile-label">Готовність до переїзду</span>
-        <span class="profile-value">Кіпр, Греція — гнучкий графік початку роботи</span>
-      </div>
-      <div class="profile-item" style="margin-top: 15px;">
-        <span class="profile-label">Рекомендації</span>
-        <span class="profile-value">Надаються за запитом</span>
+      <div class="additional-section">
+        <div class="additional-item">
+          <span class="additional-label">Хобі</span>
+          <span class="additional-value">Гра на гітарі, шахи, плавання, баскетбол, музика</span>
+        </div>
+        <div class="additional-item">
+          <span class="additional-label">Готовність до переїзду</span>
+          <span class="additional-value">Кіпр, Греція — гнучкий графік початку роботи</span>
+        </div>
+        <div class="additional-item">
+          <span class="additional-label">Рекомендації</span>
+          <span class="additional-value">Надаються за запитом</span>
+        </div>
       </div>
 
     </section>
@@ -670,22 +702,24 @@
         </div>
         <p style="color: #555; margin-top: 8px;">
           Level: <strong>B2 (Upper Intermediate)</strong>
-        </div>
+        </p>
       </div>
 
-      <!-- ADDITIONAL -->
+      <!-- ADDITIONAL INFO -->
       <h2 style="margin-top: 30px;">📌 Additional Information</h2>
-      <div class="profile-item" style="margin-top: 15px;">
-        <span class="profile-label">Hobbies</span>
-        <span class="profile-value">Playing guitar, chess, swimming, basketball, music</span>
-      </div>
-      <div class="profile-item" style="margin-top: 15px;">
-        <span class="profile-label">Relocation</span>
-        <span class="profile-value">Cyprus, Greece — flexible start date</span>
-      </div>
-      <div class="profile-item" style="margin-top: 15px;">
-        <span class="profile-label">References</span>
-        <span class="profile-value">Available upon request</span>
+      <div class="additional-section">
+        <div class="additional-item">
+          <span class="additional-label">Hobbies</span>
+          <span class="additional-value">Playing guitar, chess, swimming, basketball, music</span>
+        </div>
+        <div class="additional-item">
+          <span class="additional-label">Relocation</span>
+          <span class="additional-value">Cyprus, Greece — flexible start date</span>
+        </div>
+        <div class="additional-item">
+          <span class="additional-label">References</span>
+          <span class="additional-value">Available upon request</span>
+        </div>
       </div>
 
     </section>

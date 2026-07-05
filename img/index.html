@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bohdan Nashchotskyi — CV / Резюме</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #1e3a5f;
+      --secondary: #2e86ab;
+      --accent: #e67e22;
+      --light: #f8f9fa;
+      --dark: #2c3e50;
+      --gray: #6c757d;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-strong: 0 8px 25px rgba(0,0,0,0.12);
+      --radius: 10px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+    }
+
+    .cv-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+    }
+
+    /* ===== SEPARATOR ===== */
+    .language-separator {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 30px;
+      border-bottom: 3px solid var(--light);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(120deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 35px 30px 25px;
+      text-align: center;
+    }
+
+    .photo-wrapper {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      padding: 4px;
+      background: white;
+      box-shadow: var(--shadow-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: 300;
+    }
+
+    header h1 {
+      font-size: 2.1rem;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 20px;
+      font-size: 0.93rem;
+      opacity: 0.95;
+    }
+
+    .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--secondary);
+      display: inline-block;
+    }
+
+    /* ===== PROFILE GRID ===== */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .profile-item {
+      background: var(--light);
+      padding: 18px;
+      border-radius: 8px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .profile-label {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .profile-value {
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .profile-value strong {
+      color: var(--dark);
+    }
+
+    /* ===== ABOUT ME ===== */
+    .about-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 5px solid var(--accent);
+      margin-top: 15px;
+    }
+
+    .about-box p {
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    /* ===== EXPERIENCE & EDUCATION ===== */
+    .item {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: var(--light);
+      border-radius: 8px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .item-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--dark);
+    }
+
+    .item-subtitle {
+      color: var(--secondary);
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+
+    .item-date {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .item ul {
+      margin-top: 12px;
+      padding-left: 22px;
+      color: #555;
+    }
+
+    .item li {
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 15px;
+    }
+
+    .skill-category {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 8px;
+      border-top: 4px solid var(--secondary);
+    }
+
+    .skill-category h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-category h3::before {
+      content: "▸";
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .skills-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skills-list li {
+      padding: 6px 0;
+      color: #555;
+      position: relative;
+      padding-left: 22px;
+      line-height: 1.4;
+    }
+
+    .skills-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .language-tag {
+      display: inline-block;
+      background: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin: 4px 6px 4px 0;
+      font-size: 0.95rem;
+      border: 2px solid var(--secondary);
+      color: var(--dark);
+    }
+
+    .language-tag.native {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .language-tag.fluent {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    /* ===== ADDITIONAL INFO - FIXED WIDTH ===== */
+    .additional-section {
+      margin-top: 25px;
+    }
+
+    .additional-item {
+      background: var(--light);
+      padding: 18px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .additional-label {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .additional-value {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      header { padding: 30px 20px 20px; }
+      .photo-wrapper { width: 120px; height: 120px; }
+      header h1 { font-size: 1.8rem; }
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .section { padding: 25px 20px; }
+      .item-header { flex-direction: column; align-items: flex-start; }
+      .profile-grid { grid-template-columns: 1fr; }
+      .skills-container { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .photo-wrapper { width: 100px; height: 100px; }
+      header h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      body { background: white; }
+      .cv-container { box-shadow: none; }
+      .language-separator { 
+        background: var(--primary); 
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+    
+    <!-- ==================== UKRAINIAN SECTION ==================== -->
+    <header>
+      <div class="photo-wrapper">
+        <img src="image.png" alt="Bohdan Nashchotskyi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display: none;">BN</div>
+      </div>
+      <h1>Богдан Нащотський</h1>
+      <div class="contact-info">
+        <span>📍 Зутермер, Нідерланди</span>
+        <span>📞 +380 93 651 7435 (WhatsApp)</span>
+        <span>✉️ naszczotskyib@gmail.com</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>📋 Основна інформація</h2>
+      <div class="profile-grid">
+        
+        <div class="profile-item">
+          <span class="profile-label">ПІБ</span>
+          <span class="profile-value"><strong>Нащотський Богдан</strong></span>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-label">Бажана посада</span>
+          <span class="profile-value"><strong>Офіціант</strong></span>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-label">Вік</span>
+          <span class="profile-value"><strong>17 років</strong></span>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-label">Освіта</span>
+          <span class="profile-value">
+            <strong>11 клас</strong><br>
+            Опорний заклад "Турійський ліцей" Турійської селищної ради Ковельського району Волинської області
+          </span>
+        </div>
+
+      </div>
+
+      <!-- ABOUT ME -->
+      <div class="about-box">
+        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.2rem;">👤 Про мене</h3>
+        <p>
+          Шукаю можливість працювати в закладі, де цінують якісне обслуговування та професіоналізм. 
+          Маю досвід роботи в міжнародному середовищі та комфортно почуваюся в багатонаціональній команді.
+        </p>
+        <p>
+          Готовий до сезонної роботи на Кіпрі, відкритий до переїзду та офіційного працевлаштування. 
+          Прагну отримати міжнародний досвід у сфері гостинності та обслуговування.
+        </p>
+        <p>
+          Відповідально ставлюся до своїх обов'язків, швидко навчаюся новому та завжди дотримуюсь 
+          високих стандартів сервісу. У вільний час граю в шахи, займаюся плаванням та баскетболом, 
+          а також граю на гітарі.
+        </p>
+      </div>
+
+      <!-- WORK EXPERIENCE -->
+      <h2 style="margin-top: 30px;">💼 Досвід роботи</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Офіціант / Помічник на кухні</div>
+            <div class="item-subtitle">Піцерія Presto, м. Лодзь, Польща</div>
+          </div>
+          <div class="item-date">березень – червень 2022</div>
+        </div>
+        <ul>
+          <li>Обслуговування відвідувачів: прийом замовлень, подача страв та напоїв</li>
+          <li>Консультування гостей щодо меню та допомогти у виборі страв</li>
+          <li>Підтримка чистоти та порядку в залі відповідно до санітарних норм</li>
+          <li>Допомога на кухні: миття посуду, підготовка інгредієнтів під час пікових годин</li>
+          <li>Робота з касовим апаратом та розрахунок відвідувачів</li>
+          <li>Забезпечення дружньої атмосфери та швидкого обслуговування</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Репетитор англійської та польської мов</div>
+            <div class="item-subtitle">Приватна практика</div>
+          </div>
+          <div class="item-date">2025 – дотепер</div>
+        </div>
+        <ul>
+          <li>Проведення індивідуальних занять для учнів різного рівня</li>
+          <li>Адаптація методики викладання під потреби кожного учня</li>
+          <li>Розвиток комунікативних навичок та практики розмовної мови</li>
+        </ul>
+      </div>
+
+      <!-- SKILLS -->
+      <h2 style="margin-top: 30px;">⚙️ Професійні навички та особисті якості</h2>
+      
+      <div class="skills-container">
+        
+        <div class="skill-category">
+          <h3>Обслуговування клієнтів</h3>
+          <ul class="skills-list">
+            <li>Професійне обслуговування гостей</li>
+            <li>Прийом та обробка замовлень</li>
+            <li>Робота в команді</li>
+            <li>Робота в умовах високого навантаження</li>
+            <li>Тайм-менеджмент</li>
+            <li>Дотримання стандартів гігієни</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Комунікація</h3>
+          <ul class="skills-list">
+            <li>Робота з міжнародними гостями</li>
+            <li>Адаптація стилю спілкування</li>
+            <li>Вирішення конфліктних ситуацій</li>
+            <li>Позитивне ставлення та ввічливість</li>
+            <li>Уважність до деталей</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Особисті якості</h3>
+          <ul class="skills-list">
+            <li>Відповідальність та пунктуальність</li>
+            <li>Швидке навчання</li>
+            <li>Стресостійкість</li>
+            <li>Ініціативність</li>
+            <li>Доброзичливість</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Знання мов</h3>
+          <div style="margin-top: 10px;">
+            <span class="language-tag native">Українська (рідна)</span>
+            <span class="language-tag fluent">Англійська (B2)</span>
+            <span class="language-tag">Польська (вільно)</span>
+            <span class="language-tag">Німецька (базовий)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <h2 style="margin-top: 30px;">📜 Сертифікати</h2>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">IELTS Academic</div>
+          <div class="item-date">26.02.2026</div>
+        </div>
+        <p style="color: #555; margin-top: 8px;">
+          Рівень: <strong>B2 (Upper Intermediate)</strong>
+        </p>
+      </div>
+
+      <!-- ADDITIONAL INFO -->
+      <h2 style="margin-top: 30px;">📌 Додатково</h2>
+      <div class="additional-section">
+        <div class="additional-item">
+          <span class="additional-label">Хобі</span>
+          <span class="additional-value">Гра на гітарі, шахи, плавання, баскетбол, музика</span>
+        </div>
+        <div class="additional-item">
+          <span class="additional-label">Готовність до переїзду</span>
+          <span class="additional-value">Кіпр, Греція — гнучкий графік початку роботи</span>
+        </div>
+        <div class="additional-item">
+          <span class="additional-label">Рекомендації</span>
+          <span class="additional-value">Надаються за запитом</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== LANGUAGE SEPARATOR ==================== -->
+    <div class="language-separator">
+      ⬇️ ENGLISH VERSION BELOW ⬇️
+    </div>
+
+    <!-- ==================== ENGLISH SECTION ==================== -->
+    <header>
+      <div class="photo-wrapper">
+        <img src="image.png" alt="Bohdan Nashchotskyi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display: none;">BN</div>
+      </div>
+      <h1>Bohdan Nashchotskyi</h1>
+      <div class="contact-info">
+        <span>📍 Zoetermeer, The Netherlands</span>
+        <span>📞 +380 93 651 7435 (WhatsApp)</span>
+        <span>✉️ naszczotskyib@gmail.com</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>📋 General Information</h2>
+      <div class="profile-grid">
+        
+        <div class="profile-item">
+          <span class="profile-label">Full Name</span>
+          <span class="profile-value"><strong>Bohdan Nashchotskyi</strong></span>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-label">Position Applied For</span>
+          <span class="profile-value"><strong>Waiter</strong></span>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-label">Age</span>
+          <span class="profile-value"><strong>17 years old</strong></span>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-label">Education</span>
+          <span class="profile-value">
+            <strong>11th Grade</strong><br>
+            Turisk Lyceum, Turiisk Settlement Council, Kovel District, Volyn Region, Ukraine
+          </span>
+        </div>
+
+      </div>
+
+      <!-- ABOUT ME -->
+      <div class="about-box">
+        <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.2rem;">👤 About Me</h3>
+        <p>
+          Seeking an opportunity to work in an establishment that values quality service and professionalism. 
+          I have experience working in an international environment and feel comfortable in a multinational team.
+        </p>
+        <p>
+          Ready for seasonal work in Cyprus, open to relocation and official employment. 
+          I aim to gain international experience in the hospitality and service industry.
+        </p>
+        <p>
+          I take my responsibilities seriously, learn new things quickly, and always maintain 
+          high service standards. In my free time, I play chess, swim, play basketball, 
+          and play the guitar.
+        </p>
+      </div>
+
+      <!-- WORK EXPERIENCE -->
+      <h2 style="margin-top: 30px;">💼 Work Experience</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Waiter / Kitchen Assistant</div>
+            <div class="item-subtitle">Presto Pizzeria, Łódź, Poland</div>
+          </div>
+          <div class="item-date">March – June 2022</div>
+        </div>
+        <ul>
+          <li>Customer service: taking orders, serving food and beverages</li>
+          <li>Advising guests on menu items and helping with food selection</li>
+          <li>Maintaining cleanliness and order in the dining area according to sanitary standards</li>
+          <li>Kitchen assistance: dishwashing, ingredient preparation during peak hours</li>
+          <li>Working with cash register and processing customer payments</li>
+          <li>Ensuring a friendly atmosphere and fast service</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <div class="item-title">English & Polish Language Tutor</div>
+            <div class="item-subtitle">Private Practice</div>
+          </div>
+          <div class="item-date">2025 – Present</div>
+        </div>
+        <ul>
+          <li>Conducting one-on-one lessons for students of various levels</li>
+          <li>Adapting teaching methods to individual student needs</li>
+          <li>Developing communication skills and conversational practice</li>
+        </ul>
+      </div>
+
+      <!-- SKILLS -->
+      <h2 style="margin-top: 30px;">⚙️ Professional Skills & Personal Qualities</h2>
+      
+      <div class="skills-container">
+        
+        <div class="skill-category">
+          <h3>Customer Service</h3>
+          <ul class="skills-list">
+            <li>Professional guest service</li>
+            <li>Order taking & processing</li>
+            <li>Teamwork</li>
+            <li>Working under pressure</li>
+            <li>Time management</li>
+            <li>Hygiene standards compliance</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Communication</h3>
+          <ul class="skills-list">
+            <li>Working with international guests</li>
+            <li>Adapting communication style</li>
+            <li>Conflict resolution</li>
+            <li>Positive attitude & politeness</li>
+            <li>Attention to detail</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Personal Qualities</h3>
+          <ul class="skills-list">
+            <li>Responsibility & punctuality</li>
+            <li>Quick learner</li>
+            <li>Stress resistance</li>
+            <li>Initiative</li>
+            <li>Friendliness</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Languages</h3>
+          <div style="margin-top: 10px;">
+            <span class="language-tag native">Ukrainian (Native)</span>
+            <span class="language-tag fluent">English (B2)</span>
+            <span class="language-tag">Polish (Fluent)</span>
+            <span class="language-tag">German (Basic)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <h2 style="margin-top: 30px;">📜 Certifications</h2>
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">IELTS Academic</div>
+          <div class="item-date">26.02.2026</div>
+        </div>
+        <p style="color: #555; margin-top: 8px;">
+          Level: <strong>B2 (Upper Intermediate)</strong>
+        </p>
+      </div>
+
+      <!-- ADDITIONAL INFO -->
+      <h2 style="margin-top: 30px;">📌 Additional Information</h2>
+      <div class="additional-section">
+        <div class="additional-item">
+          <span class="additional-label">Hobbies</span>
+          <span class="additional-value">Playing guitar, chess, swimming, basketball, music</span>
+        </div>
+        <div class="additional-item">
+          <span class="additional-label">Relocation</span>
+          <span class="additional-value">Cyprus, Greece — flexible start date</span>
+        </div>
+        <div class="additional-item">
+          <span class="additional-label">References</span>
+          <span class="additional-value">Available upon request</span>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
+</html>
